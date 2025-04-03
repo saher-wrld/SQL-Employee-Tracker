@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/saher-wrld/SQL-Employee-Tracker/issues"
   },
-  "homepage": "https://github.com/saher-wrld/SQL-Employee-Tracker#readme"
+  "homepage": "https://github.com/saher-wrld/SQL-Employee-Tracker#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "pg": "^8.14.1"
+  }
 }
