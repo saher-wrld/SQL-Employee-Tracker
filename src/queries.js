@@ -32,13 +32,7 @@ FROM employee
     mainMenu();
 }
 
-
 //function to add a department
-//WHEN I choose to add a department THEN I am prompted to enter the name 
-//"What is the name of the department?"
-//and that department is added to the database
-// //"Added __ to the database"
-
 const addDepartment = async () => {
 //try to see if the department name already exists
 
@@ -59,13 +53,6 @@ const addDepartment = async () => {
 }
 
 //function to add a role
-//WHEN I choose to add a role
-//THEN I am prompted to enter the name, salary, and department 
-//"What is the name of the role?"
-//"What is the salary of the role?"
-//"which department does the role belong to?"(use arrow keys)
-//then that role is added to the database
-//"Added __ to the database"
 const addRole = async () => {
     const departments = await pool.query('SELECT * FROM department');
     const { roleName, salary, departmentId } = await inquirer.prompt([
@@ -97,16 +84,6 @@ const addRole = async () => {
 }
 
 //funtion to add an employee
-//WHEN I choose to add an employee
-//THEN I am prompted to enter the employee’s 
-// first name, last name, role, and manager, 
-//"What is the first name of the employee?"
-//"What is the last name of the employee?"
-//"What is the employees role?"(use arrow keys)
-// and that employee is added to the database
-//"Which employee is the manager?"(use arrow keys)
-//"Added __ to the database"
-
 const addEmployee = async () => {
     // Fetch roles and employees from the database
     const roles = await pool.query('SELECT * FROM role');
@@ -158,12 +135,6 @@ const addEmployee = async () => {
 };
 
 //funtion to update an employee role
-//WHEN I choose to update an employee role
-//THEN I am prompted to select an employee to update 
-// and their new role and this information is updated in the database
-//"Which employee do you want to update?"(use arrow keys)
-//"Which role do you want to assign the selected employee?"(use arrow keys)
-
 const updateEmployeeRole = async () => {
     // Fetch employees and roles from the database
     const employees = await pool.query('SELECT * FROM employee');
@@ -241,9 +212,5 @@ const updateManager = async () => {
     mainMenu(); // Return to the main menu
 }
 
-//* Application allows users to view employees by manager (2 points).
-//* Application allows users to view employees by department (2 points).
-
 
 export { viewAllDepartments, viewAllRoles, viewAllEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole, updateManager};
-// export { viewAllDepartments, viewAllRoles, viewAllEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole };

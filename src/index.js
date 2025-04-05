@@ -4,22 +4,9 @@ import inquirer from 'inquirer';
 import dotenv from 'dotenv';
 dotenv.config();
 
-// // import { Pool } from 'pg';
-// import pkg from 'pg';
-// const { Pool } = pkg;
-
 
 //import functions from queries file//
-import { viewAllDepartments, viewAllRoles, viewAllEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole, updateManager } from './queries.js';    //addRole, addEmployee, updateEmployeeRole
-
-// A connection pool with your PostgreSQL credentials
-// const pool = new Pool({
-//     user: process.env.DB_USER,
-//     password: process.env.DB_PASSWORD,
-//     host: 'localhost',
-//     database: process.env.DB_NAME,
-//     port: 5432,
-// });
+import { viewAllDepartments, viewAllRoles, viewAllEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole, updateManager } from './queries.js';  
 
 const mainMenu = async () => {
     const answers = await inquirer.prompt([
