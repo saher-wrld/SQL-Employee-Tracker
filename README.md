@@ -54,7 +54,7 @@ This project is licensed under the MIT license.
 ## Links
 
 * [GitHub Repository](https://github.com/saher-wrld/SQL-Employee-Tracker)
-* [Walkthrough Video](https://drive.google.com/file/d/1rPnaIHwKifQspeITYdYsAk9u-UNci4Uy/preview)
+* [Walkthrough Video](https://app.screencastify.com/v3/watch/NWi9SJ1py7s82n9UKydp)
 
 
 ## Questions
