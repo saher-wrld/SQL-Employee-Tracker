@@ -4,19 +4,22 @@ import inquirer from 'inquirer';
 import dotenv from 'dotenv';
 dotenv.config();
 
-import { Pool } from 'pg';
+// // import { Pool } from 'pg';
+// import pkg from 'pg';
+// const { Pool } = pkg;
+
 
 //import functions from queries file//
-import { getDepartments, getRoles, getEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole } from './queries.js';
+import { viewAllDepartments, viewAllRoles, viewAllEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole, updateManager } from './queries.js';    //addRole, addEmployee, updateEmployeeRole
 
 // A connection pool with your PostgreSQL credentials
-const pool = new Pool({
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    host: 'localhost',
-    database: process.env.DB_NAME,
-    port: 5432,
-});
+// const pool = new Pool({
+//     user: process.env.DB_USER,
+//     password: process.env.DB_PASSWORD,
+//     host: 'localhost',
+//     database: process.env.DB_NAME,
+//     port: 5432,
+// });
 
 const mainMenu = async () => {
     const answers = await inquirer.prompt([
@@ -32,6 +35,7 @@ const mainMenu = async () => {
                 'Add a role',
                 'Add an employee',
                 'Update an employee role',
+                'Update an employee\'s manager',
                 'Exit'
             ],
         },
@@ -59,6 +63,9 @@ const mainMenu = async () => {
                 case 'Update an employee role':
                     updateEmployeeRole();
                     break;
+                case 'Update an employee\'s manager':
+                    updateManager();
+                    break;
                 case 'Exit':
                     console.log('Goodbye!');
                     process.exit();
@@ -68,7 +75,7 @@ const mainMenu = async () => {
                     mainMenu();
             }
         });
-};ß
+};
 
 mainMenu();
 
